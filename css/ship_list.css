@@ -1,0 +1,15 @@
+.card-container{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.card{
+    background-color: rgb(233, 230, 230);
+    width: 33%;
+    margin: 10px;
+}
