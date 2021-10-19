@@ -14,7 +14,7 @@ loginCheck();
 
 $id = $_SESSION["id"];
 $plan_flag = $_SESSION["plan_flag"];
-echo $plan_flag;
+// echo $plan_flag;
 
 // 1. データベース接続
 $pdo = db_connect();
