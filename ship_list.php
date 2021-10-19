@@ -20,7 +20,7 @@ $plan_flag = $_SESSION["plan_flag"];
 $pdo = db_connect();
 
 //２．データ取得SQL作成
-$stmt = $pdo->prepare("SELECT * from ship_list JOIN ship_type ON ship_list.type = ship_type.id;");
+$stmt = $pdo->prepare("SELECT ship_list.id, ship_list.shipName, ship_list.built, ship_type.type from ship_list JOIN ship_type ON ship_list.type = ship_type.type_code;");
 $status = $stmt->execute();  
 
 //３．データ表示
