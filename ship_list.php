@@ -20,7 +20,7 @@ echo $plan_flag;
 $pdo = db_connect();
 
 //２．データ取得SQL作成
-$stmt = $pdo->prepare("SELECT * FROM ship_list");
+$stmt = $pdo->prepare("SELECT * from ship_list JOIN ship_type ON ship_list.type = ship_type.id;");
 $status = $stmt->execute();  
 
 //３．データ表示
@@ -33,7 +33,7 @@ if ($status == false) {
         $view .= '<img class="card-img-top" src="images/shipImage'. $r["id"] . '.jpg" alt="Card image cap">';
         $view .= '<div class="card-body">';
         $view .= '<h5 class="card-title">船名:' . $r["shipName"] . '</h5>';
-        $view .= '<p class="card-text">shiptype</p>';
+        $view .= '<p class="card-text">船型:' . $r["type"] . '</p>';
         $view .= '<p class="card-text">建造年:' . $r["built"] . '</p>';
         $view .= '</div>';
         $view .= '</div>';
@@ -41,6 +41,7 @@ if ($status == false) {
 }else{
     $view = "あなたの購読プランでは閲覧できません。ユーザー情報のページから購読プランを変更してください。";
 }
+
 
 
 ?>
@@ -87,5 +88,9 @@ if ($status == false) {
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    
+
+    </script>
 </body>
 </html>
